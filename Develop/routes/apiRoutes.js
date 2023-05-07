@@ -9,7 +9,6 @@ res.json(noteData));
 
 // API POST Request & add unique ID
 router.post("/api/notes", (req, res) => {
-  // req.body.id = uuidv4();
   noteData.push(req.body);
   fs.writeFile("./db/db.json", JSON.stringify(noteData), (err) => {
     if (err) throw err;
