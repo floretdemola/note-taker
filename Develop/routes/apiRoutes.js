@@ -4,11 +4,11 @@ let noteData = require("../db/db.json");
 
 
 // API GET Request
-router.get("/api/notes", (req, res) => 
+router.get("/notes", (req, res) => 
 res.json(noteData));
 
 // API POST Request & add unique ID
-router.post("/api/notes", (req, res) => {
+router.post("/notes", (req, res) => {
   noteData.push(req.body);
   fs.writeFile("./db/db.json", JSON.stringify(noteData), (err) => {
     if (err) throw err;
@@ -17,7 +17,7 @@ router.post("/api/notes", (req, res) => {
 });
 
 // Delete Note by unique ID
-router.delete("/api/notes/:id", (req, res) => {
+router.delete("/notes/:id", (req, res) => {
   const deleteID = req.params.id;
   // ID record to delete
   for (let i = 0; i < noteData.length; i++) {
