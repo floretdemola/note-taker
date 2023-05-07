@@ -2,7 +2,6 @@ const fs = require("fs");
 const router = require("express").Router();
 let noteData = require("../db/db.json");
 
-// const { v4: uuidv4} = require('uuid');
 
 // API GET Request
 router.get("/api/notes", (req, res) => 
